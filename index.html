@@ -1,0 +1,165 @@
+<!DOCTYPE html> <!-- Declaración del tipo de documento -->
+<html lang="es"> <!-- Inicio del elemento HTML con especificación del idioma -->
+<head> <!-- Sección de encabezado del documento -->
+  <meta charset="UTF-8"> <!-- Especifica el conjunto de caracteres -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Etiqueta de metadatos para la configuración de la vista en dispositivos móviles -->
+  <title>Perritos en Adopción: ¡Dales una Pata de Ayuda y Hogar!</title> <!-- Título de la página -->
+  <style> <!-- Inicio de la sección de estilos CSS -->
+    /* Fuente */
+    @font-face {
+      font-family: 'Crayon Kids'; /* Nombre de la fuente */
+      src: url('https://github.com/vivianabril21/imag/raw/main/crayon%20kids.ttf') format('truetype'); /* Ruta de la fuente */
+    }
+
+    /* Aplicando la fuente a todo el documento */
+    body {
+      margin: 0; /* Margen exterior del cuerpo del documento */
+      padding: 0; /* Relleno interior del cuerpo del documento */
+      background-color: #f0f0f0; /* Color de fondo del cuerpo del documento */
+      font-family: 'Crayon Kids','Montserrat', 'Comic Sans MS'; /* Fuente utilizada en todo el documento */
+      transition: padding-top 0.5s ease; /* Transición suave para el espacio superior */
+    }
+
+    /* Estilos del menú */
+    ul {
+      list-style-type: none; /* Elimina los marcadores de lista */
+      margin: 0; /* Elimina el margen exterior */
+      padding: 0; /* Elimina el relleno interior */
+      position: fixed; /* Fija la posición del menú */
+      top: 0; /* Ubicación en la parte superior */
+      right: 0; /* Ubicación en el lado derecho */
+      background-color: #003002; /* Color de fondo del menú */
+      height: 100%; /* Altura del menú */
+      width: 200px; /* Ancho del menú */
+      z-index: 1; /* Define el orden de apilamiento */
+    }
+
+    li {
+      margin: 10px 0; /* Espacio entre elementos de la lista */
+    }
+
+    li a {
+      display: block; /* Muestra los enlaces como bloques */
+      padding: 10px 20px; /* Espaciado interno de los enlaces */
+      text-decoration: none; /* Elimina el subrayado de los enlaces */
+      color: white; /* Color del texto del enlace */
+    }
+
+    li a:hover {
+      background-color: #001E01; /* Color de fondo al pasar el cursor sobre los enlaces */
+    }
+
+    .contenido {
+      max-width: 800px; /* Ancho máximo del contenido */
+      margin: 200px auto 50px; /* Margen exterior */
+      padding: 20px; /* Relleno interior */
+      background-color: #FFFFFF; /* Color de fondo del contenido */
+      border-radius: 10px; /* Radio de borde para bordes redondeados */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    }
+
+    h1, p {
+      text-align: justify; /* Alineación justificada del texto */
+    }
+
+    .contenido p {
+      margin-bottom: 20px; /* Espacio inferior entre párrafos */
+    }
+
+    /* Estilos para el icono del menú */
+    .icon {
+      background-color: #FFFFFF; /* Color de fondo del icono */
+      font-size: 30px; /* Tamaño de la fuente del icono */
+      cursor: pointer; /* Cursor al pasar sobre el icono */
+      padding: 20px; /* Espaciado interior del icono */
+      display: block; /* Muestra el icono como bloque */
+      text-align: left; /* Alineación del texto del icono */
+    }
+
+    /* Estilos para el banner */
+    .banner {
+      display: block; /* Muestra la imagen como bloque */
+      margin: 0 auto; /* Centra la imagen horizontalmente */
+      max-width: 100%; /* Ancho máximo de la imagen */
+      transition: opacity 0.5s ease, padding-top 0.5s ease; /* Transiciones suaves */
+      opacity: 1; /* Opacidad inicial */
+    }
+
+    /* Contenedor para hacer que el banner empuje el contenido hacia abajo */
+    .banner-container {
+      position: relative; /* Posición relativa del contenedor del banner */
+    }
+
+    /* Media query para dispositivos pequeños */
+    @media screen and (max-width: 768px) {
+      .contenido {
+        padding: 10px; /* Relleno interior reducido para dispositivos pequeños */
+      }
+    }
+    
+    /* Estilos para el pie de página */
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    footer p {
+      margin: 0;
+    }
+    footer a {
+      color: #fff;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body background="https://github.com/vivianabril21/imag/blob/main/rr.png?raw=true"> <!-- Imagen de fondo del cuerpo del documento -->
+  <!-- Icono para abrir/cerrar el menú en dispositivos móviles -->
+  <div class="icon" onclick="toggleMenu()">☰</div>
+  <!-- Menú de navegación -->
+  <ul id="menu">
+    <li><a href="slider.html">Peluditos en busca de hogar</a></li>
+    <li><a href="derechosdeloscanes.html">Derechos de los Canes</a></li>
+    <li><a href="incumplimiento.html">Incumplimiento de los Derechos de los Canes</a></li>
+    <li><a href="sanciones.html">Sanciones por Abandono de Perros</a></li>
+    <li><a href="consejos.html">Consejos para el Cuidado de Mascotas</a></li>
+    <li><a href="adopcionres.html">Adopción Responsable de Mascotas</a></li>
+    <li><a href="alberguesc.html">Albergues Cercanos para Adopción de Mascotas</a></li>
+    <li><a href="esteri.html">Esterilización</a></li>
+    <li><a href="contacto.html">Contacto</a></li>
+  </ul>
+
+  <!-- Contenedor del banner -->
+  <div class="banner-container">
+    <!-- Banner de la página -->
+    <img class="banner" src="https://github.com/vivianabril21/imag/blob/main/banner.png?raw=true" alt="Banner de la página">
+  </div>
+
+  <!-- Contenido principal -->
+  <div class="contenido">
+    <h1 style="color:black;text-align:center;font-size:300%;">¡Bienvenido a nuestra <br>página de adopción de perritos!</h1> <!-- Título principal -->
+    <p style="color:black;font-size:200%;">En nuestra página, te damos la bienvenida a explorar una amplia variedad de perritos adorables en busca de un hogar amoroso. Aquí encontrarás información sobre nuestros amiguitos peludos disponibles para adopción, así como consejos útiles sobre cuidado de mascotas, adopción responsable y mucho más.</p> <!-- Párrafo introductorio -->
+    <p style="color:black;font-size:200%;">Creemos firmemente en la importancia de brindar un hogar cariñoso y seguro a cada perrito que llega a nuestras manos. Todos nuestros peluditos son rescatados, cuidados y preparados para encontrar a su familia humana ideal. ¡Y esa familia podría ser la tuya!</p> <!-- Párrafo sobre la importancia de la adopción responsable -->
+    <p style="color:black;font-size:200%;">Explora nuestras secciones, conoce a nuestros perros disponibles para adopción y, si encuentras a tu compañero canino perfecto, no dudes en ponerte en contacto con nosotros. Estamos aquí para ayudarte en todo el proceso de adopción y garantizar que tanto tú como tu nuevo amigo de cuatro patas tengan una experiencia maravillosa juntos.</p> <!-- Párrafo invitando a explorar y contactar -->
+    <p style="color:black;font-size:200%;">¡Gracias por considerar la adopción y por visitar nuestra página! Esperamos que encuentres a tu nuevo mejor amigo aquí.</p> <!-- Agradecimiento y despedida -->
+    <footer>
+      <p>© 2024. Diseñado por Vivian Abril Aguilar Rios, Armando Ramíres Pámanes, Yessenia Ashabel Ramírez Marrufo, Ariana de los Angeles Adame Rios, Yazmin Isabel Rivas Romero, Marlene Rivera Triana,.</p>
+    </footer>
+  </div>
+
+  <!-- Script para manejar el menú -->
+  <script>
+    function toggleMenu() {
+      var menu = document.getElementById("menu"); // Obtiene el menú
+      if (menu.style.display === "block") {
+        menu.style.display = "none"; // Si el menú está visible, lo oculta
+      } else {
+        menu.style.display = "block"; // Si el menú está oculto, lo muestra
+      }
+    }
+  </script> <!-- Función para mostrar/ocultar el menú en dispositivos móviles -->
+</body> <!-- Fin del cuerpo del documento -->
+</html> <!-- Fin del documento HTML -->

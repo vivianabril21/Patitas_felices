@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"> <!-- Establece la codificación de caracteres del documento -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura la visualización en dispositivos móviles -->
+  <title>Slider</title> <!-- Define el título de la página -->
+  <style>
+    /* Definición de la fuente Crayon Kids */
+    @font-face {
+      font-family: 'Crayon Kids';
+      src: url('https://github.com/vivianabril21/imag/raw/main/crayon%20kids.ttf') format('truetype');
+      /* Ajusta la ruta según la ubicación real del archivo de fuente */
+    }
+
+    /* Aplicación de la fuente a todo el documento */
+    body {
+      margin: 0; /* Elimina los márgenes predeterminados */
+      padding: 0; /* Elimina los rellenos predeterminados */
+      background-color: #f0f0f0; /* Establece el color de fondo */
+      font-family: 'Crayon Kids', 'Montserrat', 'Comic Sans MS'; /* Usa la fuente Crayon Kids */
+    }
+
+    /* Estilos para el fondo */
+    body {
+      margin: 0; /* Elimina los márgenes predeterminados */
+      padding: 0; /* Elimina los rellenos predeterminados */
+      background-image: url("https://raw.githubusercontent.com/vivianabril21/imag/main/rr.png"); /* Establece la imagen de fondo */
+      background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+      background-position: center center; /* Centra la imagen de fondo */
+      background-attachment: fixed; /* Fija la imagen de fondo */
+      background-size: cover; /* Ajusta la imagen de fondo para cubrir todo el contenedor */
+    }
+
+    /* Estilos para el contenedor principal */
+    .container {
+      width: 90%; /* Ancho del contenedor */
+      max-width: 1200px; /* Ancho máximo del contenedor */
+      margin: 0 auto; /* Centra el contenedor horizontalmente */
+      padding: 20px; /* Espacio alrededor del contenedor */
+    }
+
+    /* Estilos para el slider */
+    .slider {
+      width: 100%; /* Ancho completo del slider */
+      overflow: hidden; /* Oculta el contenido que excede el área visible */
+      position: relative; /* Establece la posición relativa */
+    }
+
+    /* Estilos para los slides */
+    .slides {
+      display: flex; /* Muestra los slides en una fila */
+      transition: transform 0.5s ease-in-out; /* Agrega una transición suave al desplazamiento */
+    }
+
+    /* Estilos para cada slide */
+    .slide {
+      flex: 0 0 auto; /* No se ajusta al tamaño, se mantiene fijo */
+      width: 100%; /* Ancho completo del slide */
+      position: relative; /* Establece la posición relativa */
+    }
+
+    /* Estilos para las imágenes dentro de los slides */
+    .slide img {
+      width: 100%; /* Ancho completo de la imagen */
+      height: auto; /* Altura automática para mantener la proporción */
+    }
+
+    /* Estilos para los controles de navegación */
+    .controls {
+      position: absolute; /* Establece la posición absoluta */
+      top: 50%; /* Coloca los controles en la mitad superior del slider */
+      transform: translateY(-50%); /* Centra verticalmente los controles */
+      width: 100%; /* Ancho completo de los controles */
+      display: flex; /* Muestra los controles en una fila */
+      justify-content: space-between; /* Distribuye los controles uniformemente */
+      align-items: center; /* Centra verticalmente los controles */
+    }
+
+    /* Estilos para los botones de control */
+    .control-btn {
+      background-color: rgba(255, 255, 255, 0.5); /* Color de fondo semi-transparente */
+      border: none; /* Elimina el borde */
+      color: #000; /* Color del texto */
+      font-size: 18px; /* Tamaño de fuente */
+      padding: 10px 20px; /* Espaciado interno */
+      cursor: pointer; /* Cambia el cursor al pasar por encima */
+    }
+
+    /* Estilos para el párrafo de texto */
+    p {
+      background-color: rgba(0, 0, 0, 0.5); /* Color de fondo semi-transparente */
+      color: white; /* Color del texto */
+      padding: 20px; /* Espaciado interno */
+      text-align: center; /* Alineación del texto al centro */
+      margin-top: 20px; /* Margen superior */
+      margin-bottom: 20px; /* Margen inferior */
+    }
+
+    /* Estilos para el enlace de regreso */
+    .home-link {
+      display: inline-block; /* Muestra el enlace como bloque en línea */
+      background-color: #4CAF50; /* Color de fondo del enlace */
+      color: white; /* Color del texto */
+      text-align: center; /* Alineación del texto al centro */
+      padding: 10px 20px; /* Espaciado interno */
+      text-decoration: none; /* Elimina el subrayado del enlace */
+      border-radius: 5px; /* Borde redondeado */
+      transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+    }
+
+    /* Estilos para el enlace de regreso al pasar el cursor por encima */
+    .home-link:hover {
+      background-color: #45a049; /* Cambia el color de fondo al pasar el cursor */
+    }
+
+    /* Media queries para ajustar el diseño en dispositivos móviles */
+    @media screen and (max-width: 768px) {
+      .container {
+        padding: 10px; /* Reducir el espacio alrededor del contenedor */
+      }
+
+      .slider {
+        width: 100%; /* Ancho completo del slider */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 style="border:2px solid black;color:black;text-align:center;font-size:300%;">¡Encuentra a tu mejor amigo en nuestro Slider de Adopción!</h1>
+    <div class="slider">
+      <div class="slides" id="slideContainer">
+        <!-- Los slides se generarán dinámicamente con JavaScript -->
+      </div>
+      <div class="controls">
+        <button class="control-btn" id="prevBtn">&#10094;</button> <!-- Botón para ir al slide anterior -->
+        <button class="control-btn" id="nextBtn">&#10095;</button> <!-- Botón para ir al siguiente slide -->
+      </div>
+    </div>
+    <p>En nuestra comunidad, creemos firmemente en la adopción de perritos como la mejor opción. Cada perrito merece un hogar amoroso y una segunda oportunidad para ser parte de una familia. Al adoptar, no solo estás salvando una vida, sino que también estás llenando tu hogar de amor y alegría. ¿Estás listo para cambiar una vida y encontrar a tu compañero peludo perfecto? ¡Adopta hoy!</p>
+  </div>
+  <a href="index.html" class="home-link">Volver a la página de inicio</a> <!-- Enlace para volver a la página de inicio -->
+
+  <script>
+    // Array de objetos con las rutas de las imágenes
+    const images = [
+      { src: 'https://github.com/vivianabril21/imagene/blob/main/chaparro.jpeg?raw=true' },
+      { src: 'https://github.com/vivianabril21/imagenes/blob/main/WhatsApp%20Image%202024-02-27%20at%209.12.51%20AM%20(2).jpeg?raw=true' },
+      { src: 'https://github.com/vivianabril21/imagene/blob/main/foxy.jpeg?raw=true' },
+      { src: 'https://github.com/vivianabril21/imagene/blob/main/miguel.jpeg?raw=true' },
+      { src: 'https://github.com/vivianabril21/imagene/blob/main/napolitano.jpeg?raw=true' },
+      { src: 'https://github.com/vivianabril21/imagenes/blob/main/WhatsApp%20Image%202024-02-27%20at%209.12.51%20AM.jpeg?raw=true' },
+      { src: 'https://github.com/vivianabril21/imagene/blob/main/pandita.jpeg?raw=true' },
+      { src: 'https://github.com/vivianabril21/imagenes/blob/main/WhatsApp%20Image%202024-02-27%20at%209.12.51%20AM%20(1).jpeg?raw=true' },
+      { src: 'https://github.com/vivianabril21/imagene/blob/main/peluche.jpeg?raw=true' }
+    ];
+
+    // Seleccionar el contenedor de los slides y los botones de control
+    const slidesContainer = document.getElementById('slideContainer');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    let counter = 0; // Inicializar el contador de slides
+
+    // Función para mostrar un slide específico
+    function showSlide(index) {
+      slidesContainer.style.transform = `translateX(-${index * 100}%)`; // Mover los slides horizontalmente
+    }
+
+    // Evento para ir al slide anterior al hacer clic en el botón de anterior
+    prevBtn.addEventListener('click', () => {
+      counter = (counter - 1 + images.length) % images.length; // Calcular el índice del slide anterior
+      showSlide(counter); // Mostrar el slide anterior
+    });
+
+    // Evento para ir al siguiente slide al hacer clic en el botón de siguiente
+    nextBtn.addEventListener('click', () => {
+      counter = (counter + 1) % images.length; // Calcular el índice del siguiente slide
+      showSlide(counter); // Mostrar el siguiente slide
+    });
+
+    // Generar dinámicamente los slides con las imágenes
+    images.forEach(image => {
+      const slide = document.createElement('div'); // Crear un div para el slide
+      slide.classList.add('slide'); // Agregar la clase 'slide' al div del slide
+      const img = document.createElement('img'); // Crear un elemento img para la imagen
+      img.src = image.src; // Establecer la ruta de la imagen
+      slide.appendChild(img); // Agregar la imagen al slide
+      slidesContainer.appendChild(slide); // Agregar el slide al contenedor de slides
+    });
+
+    // Mostrar el slide inicial
+    showSlide(counter);
+  </script>
+</body>
+</html>

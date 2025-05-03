@@ -1,0 +1,98 @@
+<!DOCTYPE html> <!-- Declaración del tipo de documento HTML -->
+<html lang="es"> <!-- Especificación del idioma principal del documento -->
+<head>
+  <meta charset="UTF-8"> <!-- Especificación de la codificación de caracteres -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configuración de la vista en dispositivos móviles -->
+  <title>Contacto</title> <!-- Título de la página -->
+  <style>
+    /* Fuente Crayon Kids */
+    @font-face {
+      font-family: 'Crayon Kids'; /* Definición del nombre de la fuente */
+      src: url('D:/Páginas web/23/font/crayon_kids2/crayon kids.ttf') format('truetype'); /* Especificación de la ruta de la fuente */
+      /* Ajusta la ruta según la ubicación real de tu archivo de fuente */
+    }
+
+    /* Aplicación de la fuente a todo el documento */
+    body {
+      margin: 0; /* Eliminación de márgenes predeterminados */
+      padding: 0; /* Eliminación de rellenos predeterminados */
+      background-color: #f0f0f0; /* Establecimiento del color de fondo */
+      font-family: 'Crayon Kids','Montserrat', 'Comic Sans MS'; /* Uso de la fuente Crayon Kids */
+    }
+
+    .container {
+      max-width: 800px; /* Establece el ancho máximo del contenedor */
+      margin: 50px auto; /* Centra el contenedor horizontalmente y agrega margen superior e inferior */
+      padding: 20px; /* Agrega espacio interno al contenedor */
+      background-color: rgba(255, 255, 255, 0.7); /* Fondo semitransparente para que el texto sea legible */
+      border-radius: 10px; /* Agrega bordes redondeados al contenedor */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor del contenedor */
+    }
+
+    h1 {
+      color: #333; /* Color del texto del encabezado */
+      text-align: center; /* Centra el texto del encabezado */
+    }
+
+    .contact-info {
+      text-align: center; /* Centra el texto de contacto */
+      margin-bottom: 20px; /* Espacio en la parte inferior del bloque de información de contacto */
+    }
+
+    .contact-info p {
+      margin: 5px; /* Espacio entre los elementos de contacto */
+    }
+
+    .imagen-flotante {
+      display: block; /* Hace que la imagen sea un bloque para centrarla */
+      margin: 0 auto 20px; /* Centra la imagen horizontalmente y agrega margen inferior */
+    }
+
+    .texto-al-lado {
+      padding: 20px; /* Espacio alrededor del div de texto e imagen */
+      text-align: center; /* Centra el contenido del div */
+    }
+
+    .home-link {
+      display: inline-block; /* Visualización del enlace como bloque en línea */
+      background-color: #4CAF50; /* Color de fondo del enlace */
+      color: white; /* Color del texto del enlace */
+      text-align: center; /* Alineación del texto del enlace al centro */
+      padding: 10px 20px; /* Agrega espacio interno al enlace */
+      text-decoration: none; /* Eliminación de la decoración del enlace */
+      border-radius: 5px; /* Agrega bordes redondeados al enlace */
+      transition: background-color 0.3s ease; /* Transición suave para el cambio de color de fondo */
+    }
+
+    .home-link:hover {
+      background-color: #45a049; /* Cambio de color de fondo del enlace al pasar el cursor sobre él */
+    }
+
+    /* Ajuste del diseño en dispositivos móviles */
+    @media screen and (max-width: 768px) {
+      .container {
+        max-width: 90%; /* Reducción del ancho máximo del contenedor para dispositivos móviles */
+        padding: 10px; /* Reducción del espacio alrededor del contenido */
+      }
+
+      .imagen-flotante {
+        width: 100%; /* Ancho completo para dispositivos móviles */
+      }
+    }
+  </style>
+</head>
+<body background="https://github.com/vivianabril21/imag/blob/main/rr.png?raw=true"> <!-- Establecimiento de una imagen de fondo para el cuerpo del documento -->
+  <div class="container">
+    <h1>Contáctanos</h1> <!-- Encabezado principal -->
+    <div class="contact-info">
+      <p>Teléfono: <a href="tel:4989830207">4989830207</a></p> <!-- Información de contacto con enlace tel -->
+      <p>WhatsApp: <a href="https://wa.me/+526711073599">6711073599</a></p> <!-- Información de contacto con enlace a WhatsApp -->
+    </div>
+  </div>
+  <div class="texto-al-lado">
+    <img src="https://github.com/vivianabril21/imag/blob/main/contacto.jpeg?raw=true" class="imagen-flotante" height="400" width="300"> <!-- Imagen flotante -->
+    <h1 style="color:black;text-align:center;font-size:650%;"><b>No compres, <br>ADOPTA.</b></h1> <!-- Texto adyacente a la imagen -->
+    <a href="index.html" class="home-link">Volver a la página de inicio</a> <!-- Enlace para volver a la página de inicio -->
+  </div>
+</body>
+</html>
